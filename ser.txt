@@ -1,0 +1,26 @@
+CREATE TABLE absents
+(
+  id serial NOT NULL,
+  created timestamp without time zone,
+  modified timestamp without time zone,
+  name character varying(20) NOT NULL,
+  
+  CONSTRAINT absents_pk PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);
+
+CREATE TABLE absent_details
+(
+  id serial NOT NULL,
+  created timestamp without time zone,
+  modified timestamp without time zone,
+  employee_id integer ,
+  absent_id  integer ,
+  remarks text,
+  CONSTRAINT absent_details_pk PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);
